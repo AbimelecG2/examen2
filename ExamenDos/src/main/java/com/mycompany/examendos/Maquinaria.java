@@ -16,20 +16,20 @@ import javax.swing.JOptionPane;
  * @author AbimelecG2
  */
 public class Maquinaria extends javax.swing.JFrame {
-    //Creando la Coleccion de Equipos
+    
     MongoCollection<Document> Maquinaria;
 
-    //Creando el modelo de la tabla
+    
     DefaultTableModel modelMaquinaria;
     /**
      * Creates new form equipos
      */
     public Maquinaria() {
         initComponents();
-    //Definiendo la coleccion equipos
+    
         this.Maquinaria = Main.conexMongo.getDB().getCollection("Maquinaria");
 
-    //Definiendo la estructura de la tabla
+
         this.modelMaquinaria = new DefaultTableModel();
         this.modelMaquinaria.addColumn("Id");
         this.modelMaquinaria.addColumn("Modelo");
@@ -37,7 +37,7 @@ public class Maquinaria extends javax.swing.JFrame {
         this.modelMaquinaria.addColumn("Vida Util");
         
         this.llenarTabla();
-//ocultar el ID de la tabla
+
         this.tbMaqui.getColumnModel().getColumn(0).setMinWidth(0);
         this.tbMaqui.getColumnModel().getColumn(0).setMaxWidth(0);
     }
@@ -252,12 +252,12 @@ public class Maquinaria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       
         this.insertarDatos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+        
         int res = JOptionPane.showOptionDialog(new JFrame(), "Esta seguro que desea eliminar el registro seleccionado?", 
                     "Confirmacion de eliminacion",
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,
@@ -268,7 +268,7 @@ public class Maquinaria extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        // TODO add your handling code here:
+        
         int res = JOptionPane.showOptionDialog(new JFrame(), "Esta seguro que desea actualizar el registro seleccionado?", 
                     "Confirmacion de actualizacion",
                     JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null,

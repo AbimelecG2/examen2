@@ -4,16 +4,16 @@
  */
 package com.mycompany.examendos;
 
-//Importacion necesaria para crear la conexion a la Base de datos de Mongo, tambien para obtener la BD seleccionada, colleciones y otros.
+
 import com.mongodb.client.*;
-//Manejar las excepciones del Try Catch de MongoDB
+
 import com.mongodb.MongoException;
 
 import com.mongodb.client.result.*;
 import static com.mongodb.client.model.Filters.*;
 import static com.mongodb.client.model.Updates.*;
 import com.mongodb.client.model.ReplaceOptions;
-//import com.mongodb.client.result.UpdateResult;
+
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
