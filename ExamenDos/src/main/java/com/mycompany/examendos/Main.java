@@ -6,15 +6,17 @@ package com.mycompany.examendos;
 
 /**
  *
- * @author USER
+ * @author AbimelecG2
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+ static conexionDB conexMongo;
+ 
+    public static void main(String[]args){
+        
+        conexMongo = new conexionDB();
+        conexMongo.setBD();
+        
+        Maquinaria abi = new Maquinaria();
+        abi.setVisible(true);
+    }   
 }
