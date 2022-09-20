@@ -13,10 +13,10 @@ public class Main {
  
     public static void main(String[]args){
         
-        conexMongo = new conexionDB();
-        conexMongo.setBD();
+        conexMongo= new conexionDB();
+        conexMongo.setDB();
         
-        Maquinaria abi = new Maquinaria();
-        abi.setVisible(true);
+        Maquinaria h = new Maquinaria();
+        h.setVisible(true);
     }   
 }

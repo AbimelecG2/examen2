@@ -29,7 +29,7 @@ public class conexionDB {
     Integer puerto=27017;
     MongoDatabase dataBaseSelect;
 
-//constructor
+
     public conexionDB(){
        try{
            this.conex = MongoClients.create("mongodb://"+servidor+":"+ puerto.toString());
@@ -39,7 +39,7 @@ public class conexionDB {
        }
     }
 
-   public void setBD(){
+   public void setDB(){
        dataBaseSelect = conex.getDatabase("Produccion");
        System.out.println("DB Selecionada: " + dataBaseSelect.toString());  
     }
@@ -47,9 +47,7 @@ public class conexionDB {
     public MongoDatabase getDB(){
        return dataBaseSelect;
     }
-
-//OPERACIONES CRUD a un documento de la BD de Mongo
-
+    
     public boolean insertDocuments(MongoCollection<Document> collection,Document newEquipo){
        try{
             collection.insertOne(newEquipo);
@@ -73,9 +71,9 @@ public class conexionDB {
 
     public boolean deleteDocuments(MongoCollection<Document> collection,String id){
         try{
-            // delete one document
+            
             Bson filter = eq("_id",new ObjectId(id));
-       //     Document doc = this.Equipos.findOneAndDelete(filter);
+       
             DeleteResult result = collection.deleteOne(filter);
             return result.getDeletedCount()>0 ? true : false;
         }catch(MongoException error){
